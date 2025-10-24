@@ -72,58 +72,6 @@ const ProductsSection: React.FC = () => {
         'KPIs automatizados'
       ],
       color: 'from-green-dark to-green-secondary'
-    },
-    {
-      id: 'self-service',
-      name: 'Autosserviços',
-      icon: Bot,
-      description: 'Dê autonomia aos seus clientes com uso de bots, URAs e FAQs inteligentes em diversos canais.',
-      features: [
-        'Chatbot inteligente',
-        'FAQ dinâmica',
-        'URA personalizada',
-        'Respostas automáticas'
-      ],
-      color: 'from-green-primary to-green-accent'
-    },
-    {
-      id: 'commerce',
-      name: 'Commerce',
-      icon: ShoppingCart,
-      description: 'Transforme seu SAC em uma máquina de vendas, orquestrando jornadas de compras do início ao fim.',
-      features: [
-        'Catálogo integrado',
-        'Carrinho de compras',
-        'Pagamentos seguros',
-        'Upselling automático'
-      ],
-      color: 'from-green-secondary to-green-primary'
-    },
-    {
-      id: 'voice',
-      name: 'Voz do cliente',
-      icon: Mic,
-      description: 'Envie pesquisas e produza relatórios detalhados, mesmo que o cliente não responda às pesquisas de satisfação.',
-      features: [
-        'Pesquisas automáticas',
-        'Análise de sentimentos',
-        'Relatórios de satisfação',
-        'Insights de mercado'
-      ],
-      color: 'from-green-accent to-green-dark'
-    },
-    {
-      id: 'ai',
-      name: 'IA',
-      icon: Brain,
-      description: 'A IA é a inteligência artificial da LetsZap que vai dar mais produtividade para o seu time.',
-      features: [
-        'Respostas automáticas',
-        'Análise de contexto',
-        'Sugestões inteligentes',
-        'Aprendizado contínuo'
-      ],
-      color: 'from-green-primary to-green-dark'
     }
   ];
 

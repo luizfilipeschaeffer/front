@@ -18,29 +18,29 @@ import {
 
 const Footer: React.FC = () => {
   const solutions = [
-    { name: 'Assist', href: '#assist' },
-    { name: 'Canais', href: '#channels' },
-    { name: 'Workflow', href: '#workflow' },
-    { name: 'Autosserviço', href: '#self-service' },
-    { name: 'Data & Insights', href: '#insights' },
-    { name: 'Commerce', href: '#commerce' },
-    { name: 'Voz do Cliente', href: '#voice' },
-    { name: 'Nub.IA', href: '#ai' }
+    { name: 'Multiatendimento', href: '#multiatendimento' },
+    { name: 'Envio em Massa', href: '#envio-massa' },
+    { name: 'Chatbot', href: '#chatbot' },
+    { name: 'Agendamento', href: '#agendamento' },
+    { name: 'Integração API', href: '#integracao-api' },
+    { name: 'Etiquetas', href: '#etiquetas' },
+    { name: 'CRM Integrado', href: '#crm' },
+    { name: 'Relatórios', href: '#relatorios' }
   ];
 
   const content = [
     { name: 'Blog', href: '#blog' },
-    { name: 'Materiais de estudo', href: '#materials' },
-    { name: 'Videos', href: '#videos' },
-    { name: 'Cases', href: '#cases' }
+    { name: 'Tutorial Completo', href: '#tutorial' },
+    { name: 'Central de Ajuda', href: '#help' },
+    { name: 'Cases de Sucesso', href: '#cases' }
   ];
 
   const about = [
-    { name: 'Parcerias', href: '#partnerships' },
-    { name: 'Contato', href: '#contact' },
+    { name: 'Políticas de Privacidade', href: '#privacy' },
+    { name: 'Termos de Uso', href: '#terms' },
     { name: 'A LetsZap', href: '#about' },
     { name: 'Trabalhe Conosco', href: '#careers' },
-    { name: 'Central de Ajuda', href: '#help' }
+    { name: 'Contato', href: '#contact' }
   ];
 
   const socialLinks = [

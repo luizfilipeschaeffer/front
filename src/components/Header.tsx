@@ -22,34 +22,35 @@ const Header: React.FC = () => {
 
   const menuItems = [
     {
-      label: 'A LetsZap',
-      href: '#about'
+      label: 'Início',
+      href: '#home'
     },
     {
-      label: 'Produtos',
-      href: '#products',
+      label: 'Funcionalidades',
+      href: '#features',
       dropdown: [
-        { label: 'Assist', href: '#assist' },
-        { label: 'Canais', href: '#channels' },
-        { label: 'Workflow', href: '#workflow' },
-        { label: 'Data & Insights', href: '#insights' },
-        { label: 'Autosserviços', href: '#self-service' },
-        { label: 'Commerce', href: '#commerce' },
-        { label: 'Voz do cliente', href: '#voice' },
-        { label: 'IA', href: '#ai' }
+        { label: 'Multiatendimento', href: '#multiatendimento' },
+        { label: 'Envio em Massa', href: '#envio-massa' },
+        { label: 'Chatbot', href: '#chatbot' },
+        { label: 'Agendamento', href: '#agendamento' },
+        { label: 'Integração API', href: '#integracao-api' },
+        { label: 'Etiquetas', href: '#etiquetas' },
+        { label: 'CRM Integrado', href: '#crm' },
+        { label: 'Relatórios', href: '#relatorios' }
       ]
     },
     {
-      label: 'Cases',
-      href: '#cases'
+      label: 'Planos',
+      href: '#pricing'
     },
     {
-      label: 'Conteúdo',
-      href: '#content',
+      label: 'Ajuda',
+      href: '#help',
       dropdown: [
-        { label: 'Blog', href: '#blog' },
-        { label: 'Vídeos', href: '#videos' },
-        { label: 'Materiais de estudo', href: '#materials' }
+        { label: 'Central de Ajuda', href: '#help' },
+        { label: 'Tutorial Completo', href: '#tutorial' },
+        { label: 'FAQ', href: '#faq' },
+        { label: 'Contato', href: '#contact' }
       ]
     }
   ];
@@ -174,10 +175,10 @@ const Header: React.FC = () => {
             
             <div className="pt-4 border-t border-gray-100 space-y-2">
               <Button variant="ghost" size="sm" className="w-full">
-                Contato
+                Login
               </Button>
               <Button variant="primary" size="sm" className="w-full">
-                Demo
+                Testar gratuitamente
               </Button>
             </div>
           </div>

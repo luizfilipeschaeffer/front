@@ -5,14 +5,15 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { MessageCircle, ArrowRight, Play } from 'lucide-react';
+import ClientOnly from './ClientOnly';
 
 const Hero: React.FC = () => {
   const [currentText, setCurrentText] = useState(0);
   
   const heroTexts = [
-    "O atendimento humano que a sua empresa merece, na ferramenta que o seu cliente adora.",
-    "A ponte direta entre sua marca e seu cliente.",
-    "Não perca mais nenhuma venda. Centralize com o LetsZap."
+    "Toda sua equipe em um único WhatsApp.",
+    "Centralize e melhore o desempenho do seu atendimento.",
+    "Transforme conversas em relacionamentos duradouros."
   ];
 
   useEffect(() => {
@@ -41,18 +42,24 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center lg:text-left"
           >
-            <motion.div
-              key={currentText}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="mb-6"
-            >
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-                {heroTexts[currentText]}
+            <ClientOnly fallback={
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-normal break-words hyphens-auto mb-6">
+                {heroTexts[0]}
               </h1>
-            </motion.div>
+            }>
+              <motion.div
+                key={currentText}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="mb-6"
+              >
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-normal break-words hyphens-auto">
+                  {heroTexts[currentText]}
+                </h1>
+              </motion.div>
+            </ClientOnly>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -60,7 +67,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-2xl"
             >
-              Conecte todos os canais, utilize IA para tornar seu atendimento mais rápido e melhore a produtividade do seu time usando uma única plataforma.
+              Centralize e melhore o desempenho do seu atendimento com nossa plataforma completa de gestão multicanal.
             </motion.p>
 
             <motion.div
@@ -70,12 +77,12 @@ const Hero: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Button size="lg" className="group">
-                Fale com especialista
+                Começar agora!
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" size="lg" className="group">
                 <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                Peça uma demonstração
+                Testar gratuitamente
               </Button>
             </motion.div>
 

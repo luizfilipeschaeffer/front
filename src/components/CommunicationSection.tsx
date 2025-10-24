@@ -10,18 +10,18 @@ const CommunicationSection: React.FC = () => {
   const communicationTypes = [
     {
       icon: Mic,
-      title: 'Áudios',
-      description: 'Envie e receba áudios dos seus clientes para facilitar a comunicação'
+      title: 'WhatsApp',
+      description: 'Conecte-se com seus clientes no canal mais popular do Brasil'
     },
     {
       icon: Image,
-      title: 'Imagens',
-      description: 'Compartilhe imagens e documentos em tempo real'
+      title: 'Instagram',
+      description: 'Atenda seus clientes onde eles já estão conversando'
     },
     {
       icon: Video,
-      title: 'Vídeos',
-      description: 'Comunicação visual para melhor experiência'
+      title: 'Facebook',
+      description: 'Centralize todas as conversas em uma única plataforma'
     }
   ];
 

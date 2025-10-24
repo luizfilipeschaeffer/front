@@ -56,8 +56,13 @@ const Header: React.FC = () => {
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleDropdown = (label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label);
+  
+  const handleMouseEnter = (label: string) => {
+    setActiveDropdown(label);
+  };
+  
+  const handleMouseLeave = () => {
+    setActiveDropdown(null);
   };
 
   return (
@@ -82,20 +87,27 @@ const Header: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <div key={item.label} className="relative group">
-                <button
+              <div 
+                key={item.label} 
+                className="relative"
+                onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
+                onMouseLeave={() => item.dropdown && handleMouseLeave()}
+              >
+                <a
+                  href={item.href}
                   className="flex items-center space-x-1 text-gray-700 hover:text-green-secondary transition-colors duration-200"
-                  onClick={() => item.dropdown && toggleDropdown(item.label)}
                 >
                   <span>{item.label}</span>
                   {item.dropdown && <ChevronDown className="w-4 h-4" />}
-                </button>
+                </a>
                 
                 {item.dropdown && (
                   <div
                     className={cn(
-                      'absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200',
-                      activeDropdown === item.label && 'opacity-100 visible'
+                      'absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 transition-all duration-200',
+                      activeDropdown === item.label 
+                        ? 'opacity-100 visible' 
+                        : 'opacity-0 invisible'
                     )}
                   >
                     <div className="py-2">
@@ -118,10 +130,10 @@ const Header: React.FC = () => {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button variant="ghost" size="sm">
-              Contato
+              Login
             </Button>
             <Button variant="primary" size="sm">
-              Demo
+              Testar gratuitamente
             </Button>
           </div>
 
@@ -144,21 +156,15 @@ const Header: React.FC = () => {
           <div className="px-4 py-6 space-y-4">
             {menuItems.map((item) => (
               <div key={item.label}>
-                <button
-                  className="flex items-center justify-between w-full text-left text-gray-700 hover:text-green-secondary transition-colors duration-200"
-                  onClick={() => item.dropdown && toggleDropdown(item.label)}
+                <a
+                  href={item.href}
+                  className="block text-gray-700 hover:text-green-secondary transition-colors duration-200"
                 >
-                  <span>{item.label}</span>
-                  {item.dropdown && <ChevronDown className="w-4 h-4" />}
-                </button>
+                  {item.label}
+                </a>
                 
                 {item.dropdown && (
-                  <div
-                    className={cn(
-                      'mt-2 ml-4 space-y-2 transition-all duration-200',
-                      activeDropdown === item.label ? 'opacity-100 max-h-96' : 'opacity-0 max-h-0 overflow-hidden'
-                    )}
-                  >
+                  <div className="mt-2 ml-4 space-y-2">
                     {item.dropdown.map((dropdownItem) => (
                       <a
                         key={dropdownItem.label}
